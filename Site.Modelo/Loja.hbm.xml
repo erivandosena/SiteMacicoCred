@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Loja" table="lojas" lazy="false">
+    <id name="loj_cod" type="String" column="loj_cod">
+      <generator class="sequence">
+        <param name="sequence">lojas_loj_cod_seq</param>
+      </generator>
+    </id>
+    <property name="loj_nome" column="loj_nome" type="String" />
+    <property name="loj_endereco" column="loj_endereco" type="String" />
+    <property name="loj_cidade" column="loj_cidade" type="String" />
+    <property name="loj_estado" column="loj_estado" type="String" />
+    <property name="loj_cep" column="loj_cep" type="String" />
+    <property name="loj_telefone" column="loj_telefone" type="String" />
+    <property name="loj_email" column="loj_email" type="String" />
+    <property name="loj_foto" column="loj_foto" type="String" />
+  </class>
+</hibernate-mapping>

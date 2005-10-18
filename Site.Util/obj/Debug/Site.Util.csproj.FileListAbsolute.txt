@@ -1,0 +1,5 @@
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Util\obj\Debug\ResolveAssemblyReference.cache
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Util\bin\Debug\Site.Util.dll
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Util\bin\Debug\Site.Util.pdb
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Util\obj\Debug\Site.Util.dll
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Util\obj\Debug\Site.Util.pdb

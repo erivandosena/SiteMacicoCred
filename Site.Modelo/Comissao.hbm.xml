@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Comissao" table="comissoes" lazy="false">
+    <id name="com_cod" type="String" column="com_cod">
+      <generator class="sequence">
+        <param name="sequence">comissoes_com_cod_seq</param>
+      </generator>
+    </id>
+    <property name="com_data_abertura" column="com_data_abertura" type="DateTime" />
+    <property name="com_data_fechamento" column="com_data_fechamento" type="DateTime" />
+    <many-to-one name="com_loja" class="Site.Modelo.Loja" column="com_loja" not-null="true"/>
+    <many-to-one name="com_usuario" class="Site.Modelo.Usuario" column="com_usuario" not-null="true"/>
+    <property name="com_status" column="com_status" type="String" />
+    <bag name="com_contrato" inverse="true" lazy="false">
+      <key column="con_comissao"/>
+      <one-to-many class="Site.Modelo.Contrato"/>
+    </bag>
+  </class>
+</hibernate-mapping>

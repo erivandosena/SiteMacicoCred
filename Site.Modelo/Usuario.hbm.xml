@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Usuario" table="usuarios" lazy="false">
+    <id name="usu_cod" type="String" column="usu_cod">
+      <generator class="sequence">
+        <param name="sequence">usuarios_usu_cod_seq</param>
+      </generator>
+    </id>
+    <property name="usu_nome" column="usu_nome" type="String" />
+    <property name="usu_senha" column="usu_senha" type="String" />
+    <property name="usu_email" column="usu_email" type="String" />
+    <many-to-one name="usu_loja" class="Site.Modelo.Loja" column="usu_loja" not-null="true"/>
+    <property name="usu_ativo" column="usu_ativo" type="Boolean" />
+    <property name="usu_funcao" column="usu_funcao" type="String" />
+    <property name="usu_nome_completo" column="usu_nome_completo" type="String" />
+    <property name="usu_cpf" column="usu_cpf" type="String" />
+    <property name="usu_rg" column="usu_rg" type="String" />
+    <property name="usu_data_nascimento" column="usu_data_nascimento" type="DateTime" not-null="false"/>
+    <property name="usu_endereco_res" column="usu_endereco_res" type="String" />
+    <property name="usu_endereco_com" column="usu_endereco_com" type="String" />
+    <property name="usu_bairro" column="usu_bairro" type="String" />
+    <property name="usu_cep" column="usu_cep" type="String" />
+    <property name="usu_cidade" column="usu_cidade" type="String" />
+    <property name="usu_uf" column="usu_uf" type="String" />
+    <property name="usu_tel_fixo" column="usu_tel_fixo" type="String" />
+    <property name="usu_tel_cel" column="usu_tel_cel" type="String" />
+    <property name="usu_banco" column="usu_banco" type="String" />
+    <property name="usu_agencia" column="usu_agencia" type="String" />
+    <property name="usu_conta" column="usu_conta" type="String" />
+    <property name="usu_operacao" column="usu_operacao" type="String" />
+    <property name="usu_tipo_conta" column="usu_tipo_conta" type="String" />
+  </class>
+</hibernate-mapping>

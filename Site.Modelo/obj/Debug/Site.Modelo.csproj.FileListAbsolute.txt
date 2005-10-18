@@ -1,0 +1,12 @@
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\bin\Debug\Site.Modelo.dll
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\bin\Debug\Site.Modelo.pdb
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\obj\Debug\ResolveAssemblyReference.cache
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\obj\Debug\Site.Modelo.dll
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\obj\Debug\Site.Modelo.pdb
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\bin\Debug\NHibernate.dll
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\bin\Debug\Iesi.Collections.dll
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\bin\Debug\log4net.dll
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\bin\Debug\NHibernate.xml
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\bin\Debug\Iesi.Collections.xml
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\bin\Debug\log4net.xml
+G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Modelo\bin\Debug\Antlr3.Runtime.dll

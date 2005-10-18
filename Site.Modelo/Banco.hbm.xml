@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Banco" table="bancos" lazy="false">
+    <id name="ban_cod" type="String" column="ban_cod">
+      <generator class="sequence">
+        <param name="sequence">bancos_ban_cod_seq</param>
+      </generator>
+    </id>
+    <property name="ban_nome" column="ban_nome" type="String" />
+    <property name="ban_site" column="ban_site" type="String" />
+    <property name="ban_logo" column="ban_logo" type="String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Pagina" table="paginas" lazy="false">
+    <id name="pag_cod" type="String" column="pag_cod">
+      <generator class="sequence">
+        <param name="sequence">paginas_pag_cod_seq</param>
+      </generator>
+    </id>
+    <property name="pag_nome" column="pag_nome" type="String" length="20" />
+    <property name="pag_descricao" column="pag_descricao" type="String" length="100"/>
+    <property name="pag_conteudo" column="pag_conteudo" type="String" />
+    <property name="pag_posicao" column="pag_posicao" type="String" />
+  </class>
+</hibernate-mapping>

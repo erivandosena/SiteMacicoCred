@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Website" table="website" lazy="false">
+    <id name="web_cod" type="String" column="web_cod">
+      <generator class="sequence">
+        <param name="sequence">website_web_cod_seq</param>
+      </generator>
+    </id>
+    <property name="web_titulo" column="web_titulo" type="String" />
+    <property name="web_slogan" column="web_slogan" type="String" />
+    <property name="web_endereco" column="web_endereco" type="String" />
+    <property name="web_cep" column="web_cep" type="String" />
+    <property name="web_cidade" column="web_cidade" type="String" />
+    <property name="web_estado" column="web_estado" type="String" />
+    <property name="web_telefone" column="web_telefone" type="String" />
+    <property name="web_email" column="web_email" type="String" />
+    <property name="web_info_titulo" column="web_info_titulo" type="String" />
+    <property name="web_info_resumo" column="web_info_resumo" type="String" />
+    <property name="web_info_conteudo" column="web_info_conteudo" type="String" />
+    <property name="web_info_data" column="web_info_data" type="DateTime" />
+    <property name="web_banner" column="web_banner" type="String" />
+  </class>
+</hibernate-mapping>
