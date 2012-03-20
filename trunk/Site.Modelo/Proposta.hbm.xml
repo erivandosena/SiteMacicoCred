@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Proposta" table="propostas" lazy="false">
+    <id name="pro_cod" type="String" column="pro_cod">
+      <generator class="sequence">
+        <param name="sequence">propostas_pro_cod_seq</param>
+      </generator>
+    </id>
+    <property name="pro_nb" column="pro_nb" type="String" />
+    <property name="pro_nit" column="pro_nit" type="String" />
+    <property name="pro_especie" column="pro_especie" type="String" />
+    <property name="pro_forma_receb_benef" column="pro_forma_receb_benef" type="String" />
+    <property name="pro_banco" column="pro_banco" type="String" />
+    <property name="pro_agencia" column="pro_agencia" type="String" />
+    <property name="pro_operacao" column="pro_operacao" type="String" />
+    <property name="pro_conta" column="pro_conta" type="String" />
+    <property name="pro_solicitado" column="pro_solicitado" type="Decimal(8,2)" />
+    <property name="pro_plano" column="pro_plano" type="String" />
+    <property name="pro_prestacao" column="pro_prestacao" type="Decimal(8,2)" />
+    <property name="pro_liber_emprestimo" column="pro_liber_emprestimo" type="String" />
+    <property name="pro_banco_emprestimo" column="pro_banco_emprestimo" type="String" />
+    <property name="pro_cidade_emprestimo" column="pro_cidade_emprestimo" type="String" />
+    <property name="pro_agencia_emprestimo" column="pro_agencia_emprestimo" type="String" />
+    <property name="pro_operacao_emprestimo" column="pro_operacao_emprestimo" type="String" />
+    <property name="pro_conta_emprestimo" column="pro_conta_emprestimo" type="String" />
+    <many-to-one name="pro_usuario" class="Site.Modelo.Usuario" column="pro_usuario" not-null="true"/>
+    <property name="pro_observacoes" column="pro_observacoes" type="String" />
+    <property name="pro_doc1" column="pro_doc1" type="String" />
+    <property name="pro_doc2" column="pro_doc2" type="String" />
+    <property name="pro_doc3" column="pro_doc3" type="String" />
+    <property name="pro_doc4" column="pro_doc4" type="String" />
+    <property name="pro_doc5" column="pro_doc5" type="String" />
+    <property name="pro_status" column="pro_status" type="String" />
+    <many-to-one name="pro_cliente" class="Site.Modelo.Cliente" column="pro_cliente" not-null="true"/>
+    <many-to-one name="pro_bancos" class="Site.Modelo.Banco" column="pro_bancos" not-null="true"/>
+    <property name="pro_tipo" column="pro_tipo" type="String" />
+    <property name="pro_data" column="pro_data" type="DateTime" />
+  </class>
+</hibernate-mapping>

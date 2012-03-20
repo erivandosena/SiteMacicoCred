@@ -1,0 +1,224 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Site.Visao.MasterPage" %>
+
+<%@ Import Namespace="Site.Util" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <meta name="description" content="Maci&ccedil;o Cred, Empr&eacute;stimo consignado para aposentados e pensionistas do INSS e servidor p&uacute;blico federal" />
+    <meta name="keywords" content="credito, emprestimo, consignado, aposentado, pensionista, inss, servidor publico, maciço, baturite" />
+
+    <meta name="language" content="pt-br" />
+    <meta name="DC.title" content="Maci&ccedil;o Cred, Promotora"/>
+    <meta name="DC.description" content="Maci&ccedil;o Cred, Empr&eacute;stimo consignado para aposentados e pensionistas do INSS e servidor p&uacute;blico federal" />
+    <meta name="DC.subject" content="credito, emprestimo, consignado, aposentado, pensionista, inss, servidor publico, maciço, baturite" />
+    <meta name="rating" content="general" />
+    <meta name="author" content="Ramos Web Designer" />
+    <meta name="reply-to" content="rwd@rwd.net.br" />
+    <meta name="audience" content="all" />
+    <meta name="distribution" content="global" />
+    <meta name="geo.placename" content="Baturité - CE, Brasil" />
+    <meta name="geo.position" content="-4.327934;-38.884596" />
+    <meta name="geo.region" content="BR-CE" />
+    <meta name="ICBM" content="-4.327934, -38.884596" />
+    <meta name="robots" content="index, follow" />
+
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <link href="App_Themes/Theme1/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="scripts/arial.js"></script>
+    <script type="text/javascript" src="scripts/cuf_run.js"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    <div class="main">
+    <div class="completa_header">
+      <div class="header">
+        <div>
+          <div class="logo">
+            <div class="logo_topo">
+            <img src="images/logo_corpo_r1_c2.jpg" border="0" />
+            </div>
+	      </div>
+          <div class="menu_nav">
+            <ul>
+              <li class="active"><a href="Default.aspx">Inicial</a></li>
+              <asp:DataList ID="DataListMenuTopo" runat="server" RepeatDirection="Horizontal" EnableViewState="False" ShowFooter="False" ShowHeader="False" RepeatLayout="Flow">
+              <ItemTemplate>
+              <li>
+                <asp:HyperLink ID="HyperLink1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"pag_nome") %>' NavigateUrl='<%# Util.GeraURL("~/"+DataBinder.Eval(Container.DataItem,"pag_nome"),DataBinder.Eval(Container.DataItem,"pag_cod")) %>'></asp:HyperLink>
+              </li>
+              </ItemTemplate>
+              </asp:DataList>
+              <li><a href="Corretor.aspx">Corretores</a></li>
+              <li><a href="Contato.aspx">Contato</a></li>
+              <li>
+              <asp:LoginView ID="LoginView1" runat="server">
+                      <LoggedInTemplate>
+                          <a href="administradores/Default.aspx">Área Restrita</a>
+                      </LoggedInTemplate>
+                      <AnonymousTemplate>
+                          <asp:LoginView ID="LoginView2" runat="server">
+                          <LoggedInTemplate>
+                              <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutText="Sair" />
+                          </LoggedInTemplate>
+                          <AnonymousTemplate>
+                              <a href="administradores/Default.aspx">Login</a>
+                          </AnonymousTemplate>
+                          </asp:LoginView>
+                      </AnonymousTemplate>
+              </asp:LoginView>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <asp:LoginName ID="LoginName1" FormatString="Seja bem-vindo! <strong>{0}</strong>" runat="server" ForeColor="#CCCCCC" /> <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutText="Sair" ForeColor="Silver" LoginText="" />
+	    <div class="clr"></div>
+      </div>
+      </div>
+      <div class="completa_hbg">
+       <div class="hbg">
+	    <div class="logo_meio"><img src="images/logo_corpo_r2_c2.jpg" border="0" /></div> 
+        <div class="banner">
+            <object id="introducao" type="application/x-shockwave-flash" data="f.swf?path=<%= ResolveUrl("~/") %>Arquivos/flash/banner598x216.swf" width="100%" height="100%">
+                <param name="movie" value="f.swf?path=<%= ResolveUrl("~/") %>Arquivos/flash/banner598x216.swf" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#5BB2C6"/>
+                <img src="images/image.jpg" border="0" alt=""/>
+            </object>
+        </div>
+        <div class="clr"></div>
+       </div>
+      </div>
+      <div class="content">
+        <div class="content_resize">
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        <!-- Conteudo Principal! -->
+        </asp:ContentPlaceHolder>
+      
+          <div class="sidebar">
+          <div class="logo_base"><img src="images/logo_corpo_r3_c2.jpg" border="0" /></div>
+            <div class="gadget">
+              <h2><span>Crédito</span> Consignado</h2>
+              <div class="clr"></div>
+              <ul class="sb_menu">
+                <asp:DataList ID="DataListMenuLateral" runat="server" RepeatDirection="Horizontal" EnableViewState="False" ShowFooter="False" ShowHeader="False" RepeatLayout="Flow">
+                   <ItemTemplate>
+                     <li><asp:HyperLink ID="HyperLink1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"pag_nome") %>' NavigateUrl='<%# Util.GeraURL("~/consignado-"+DataBinder.Eval(Container.DataItem,"pag_nome"),DataBinder.Eval(Container.DataItem,"pag_cod")) %>'></asp:HyperLink>
+                   </ItemTemplate>
+                </asp:DataList>
+              </ul>
+            </div>
+            <div class="gadget">
+              <h2><span>INSS</span></h2>
+              <div class="clr"></div>
+              <ul class="ex_menu">
+                <asp:DataList ID="DataListInss" runat="server" RepeatDirection="Horizontal" EnableViewState="False" ShowFooter="False" ShowHeader="False" RepeatLayout="Flow">
+                   <ItemTemplate>
+                     <li><a href="<%# Eval("lin_url") %>" target="_blank"><%# Eval("lin_nome")%></a></li>
+                   </ItemTemplate>
+                </asp:DataList>
+              </ul>
+            </div>
+        
+            <div class="gadget">
+              <h2><span>Bancos</span></h2>
+              <div class="clr"></div>
+              <ul class="ex_menu">
+                <asp:DataList ID="DataListBancos" runat="server" RepeatDirection="Horizontal" EnableViewState="False" ShowFooter="False" ShowHeader="False" RepeatLayout="Flow">
+                   <ItemTemplate>
+                     <li><a href="<%# Eval("lin_url") %>" target="_blank"><%# Eval("lin_nome")%></a></li>
+                   </ItemTemplate>
+                </asp:DataList>
+              </ul>
+            </div>
+        
+            <div class="gadget">
+              <h2><span>Fatores &amp; Tabelas</span></h2>
+              <div class="clr"></div>
+              <ul class="ex_menu">
+                <asp:DataList ID="DataListFatTab" runat="server" RepeatDirection="Horizontal" EnableViewState="False" ShowFooter="False" ShowHeader="False" RepeatLayout="Flow">
+                   <ItemTemplate>
+                     <li><a href="<%# Eval("lin_url") %>" target="_blank"><%# Eval("lin_nome")%></a></li>
+                   </ItemTemplate>
+                </asp:DataList>
+              </ul>
+            </div>
+        
+            <div class="gadget">
+              <h2><span>Úteis</span></h2>
+              <div class="clr"></div>
+              <ul class="ex_menu">
+                <asp:DataList ID="DataListUteis" runat="server" RepeatDirection="Horizontal" EnableViewState="False" ShowFooter="False" ShowHeader="False" RepeatLayout="Flow">
+                   <ItemTemplate>
+                     <li><a href="<%# Eval("lin_url") %>" target="_blank"><%# Eval("lin_nome")%></a></li>
+                   </ItemTemplate>
+                </asp:DataList>
+              </ul>
+            </div>
+        
+          </div>
+          <div class="clr"></div>
+        </div>
+      </div>
+      <div class="completa_fbg">
+      <div class="fbg">
+        <div class="fbg_resize">
+          <div class="col c1">
+            <h2><asp:Label ID="Label4" runat="server" Text="Bancos Parceiros" Visible="False"></asp:Label></h2>
+              <asp:Repeater ID="Repeater1" runat="server">
+              <ItemTemplate>
+              <asp:HyperLink ID="HyperLink3" runat="server" Text='<%# Eval("ban_nome") %>' NavigateUrl='<%# Eval("ban_site") %>' Target="_blank" ImageUrl='<%# Eval("ban_logo") %>' CssClass="bancosLink"></asp:HyperLink>
+              </ItemTemplate>
+              </asp:Repeater>
+         </div>
+          <div class="col c2">
+            <h2><asp:Label ID="Label3" runat="server" Text="Nossas Lojas" Visible="False"></asp:Label></h2>
+              <ul class="col c2">
+                <asp:DataList ID="DataListLojas" runat="server" RepeatDirection="Horizontal" EnableViewState="False" ShowFooter="False" ShowHeader="False" RepeatLayout="Flow">
+                   <ItemTemplate>
+                     <li style="text-transform:lowercase;text-transform:capitalize;font-family:Tahoma;font-size:8pt;font-weight:bold;margin-top: -5px;">
+                        <asp:HyperLink ID="HyperLink2" runat="server" Text='<%# Eval("loj_nome") + " - " + Eval("loj_cidade") %>' NavigateUrl='<%# Util.GeraURL("~/nossa-"+DataBinder.Eval(Container.DataItem,"loj_nome"),DataBinder.Eval(Container.DataItem,"loj_cod")) %>'></asp:HyperLink>
+                     </li>
+                   </ItemTemplate>
+                </asp:DataList>
+              </ul>
+          </div>
+          <div class="col c3">
+            <h2><asp:Label ID="LabelTitContato" runat="server" Text="Contato expresso" Visible="false"></asp:Label></h2>
+            <ul class="col c3">
+            <asp:Label ID="Label1" runat="server" Text='<li class="texto_personalizado"><strong>Fale conosco</strong></li>' Visible="false"></asp:Label>
+            </ul>
+          </div>
+        </div>
+	    <div class="clr"></div>
+      </div>
+      </div>
+      <div class="completa_footer">
+      <div class="footer">
+        <div class="footer_resize">
+          <p class="lf">Copyright © 2010 - <%= DateTime.Now.Year %> <strong><asp:Label ID="Label2" runat="server" Text=""></asp:Label></strong></p>
+          <p class="rf">Produzido por <a href=' <%= ConfigurationManager.AppSettings["AdminSite"] %>' target='_blank'>RWD</a></p>
+        </div>
+	    <div class="clr"></div>
+      </div>
+      </div>
+    </div>
+    </form>
+</body>
+</html>

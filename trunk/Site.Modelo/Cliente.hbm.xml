@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Cliente" table="clientes" lazy="false">
+    <id name="cli_cod" type="String" column="cli_cod">
+      <generator class="sequence">
+        <param name="sequence">clientes_cli_cod_seq</param>
+      </generator>
+    </id>
+    <property name="cli_nome" column="cli_nome" type="String" />
+    <property name="cli_nasc" column="cli_nasc" type="DateTime" />
+    <property name="cli_sexo" column="cli_sexo" type="String" />
+    <property name="cli_cpf" column="cli_cpf" type="String" />
+    <property name="cli_rg" column="cli_rg" type="String" />
+    <property name="cli_dt_emissao" column="cli_dt_emissao" type="DateTime" />
+    <property name="cli_telefone" column="cli_telefone" type="String" />
+    <property name="cli_telefone2" column="cli_telefone2" type="String" />
+    <property name="cli_mae" column="cli_mae" type="String" />
+    <property name="cli_pai" column="cli_pai" type="String" />
+    <property name="cli_naturalidade" column="cli_naturalidade" type="String" />
+    <property name="cli_natural_uf" column="cli_natural_uf" type="String" />
+    <property name="cli_endereco" column="cli_endereco" type="String" />
+    <property name="cli_bairro" column="cli_bairro" type="String" />
+    <property name="cli_referencia" column="cli_referencia" type="String" />
+    <property name="cli_cep" column="cli_cep" type="String" />
+    <property name="cli_cidade" column="cli_cidade" type="String" />
+    <property name="cli_uf" column="cli_uf" type="String" />
+    <property name="cli_renda" column="cli_renda" type="Decimal(8,2)" />
+    <property name="cli_data_cadastro" column="cli_data_cadastro" type="DateTime" />
+    <property name="cli_email" column="cli_email" type="String" />
+    <property name="cli_senha" column="cli_senha" type="String" />
+    <property name="cli_nb1" column="cli_nb1" type="String" />
+    <property name="cli_nb2" column="cli_nb2" type="String" />
+  </class>
+</hibernate-mapping>

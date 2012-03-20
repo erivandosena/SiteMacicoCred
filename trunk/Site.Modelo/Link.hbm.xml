@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Link" table="links" lazy="false">
+    <id name="lin_cod" type="String" column="lin_cod">
+      <generator class="sequence">
+        <param name="sequence">links_lin_cod_seq</param>
+      </generator>
+    </id>
+    <property name="lin_nome" column="lin_nome" type="String" />
+    <property name="lin_tipo" column="lin_tipo" type="String" />
+    <property name="lin_url" column="lin_url" type="String" />
+  </class>
+</hibernate-mapping>

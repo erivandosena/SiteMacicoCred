@@ -1,0 +1,348 @@
+2011-10-05 13:48:54,515[1] ERROR Site.Visao.Global - App_Error
+System.Web.HttpException: The file '/mc/administradores/ListaBancos.aspx' does not exist.
+   at System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2011-10-05 13:50:27,296[1] ERROR Site.Visao.Global - App_Error
+System.Web.HttpException: Unable to find control id 'TextBoxUrl' referenced by the 'ControlToValidate' property of 'RequiredFieldValidator2'.
+   at System.Web.UI.WebControls.BaseValidator.CheckControlValidationProperty(String name, String propertyName)
+   at System.Web.UI.WebControls.BaseValidator.ControlPropertiesValid()
+   at System.Web.UI.WebControls.BaseValidator.get_PropertiesValid()
+   at System.Web.UI.WebControls.BaseValidator.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-05 13:51:19,500[1] ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (:p0, :p1, :p2, :p3)
+Npgsql.NpgsqlException:
+duplicate key violates unique constraint "bancos_pkey"
+Severity: ERROR
+Code: 23505
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 839
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1163
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1181
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1367
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1030
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery() in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 512
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2011-10-05 13:51:19,828[1] ERROR NHibernate.Util.ADOExceptionReporter - ERROR: 23505: duplicate key violates unique constraint "bancos_pkey"
+2011-10-05 13:51:19,828[1] ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session
+NHibernate.Exceptions.GenericADOException: could not insert: [Site.Modelo.Banco#1][SQL: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (?, ?, ?, ?)] ---> Npgsql.NpgsqlException:
+duplicate key violates unique constraint "bancos_pkey"
+Severity: ERROR
+Code: 23505
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 839
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1163
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1181
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1367
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1030
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery() in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 512
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.AdoNet.NonBatchingBatcher.AddToBatch(IExpectation expectation)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2011-10-05 13:51:19,875[1] ERROR Site.Visao.Global - App_Error
+System.Exception: could not insert: [Site.Modelo.Banco#1][SQL: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (?, ?, ?, ?)]
+   at Site.Visao.administradores.CadBanco.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\administradores\CadBanco.aspx.cs:line 64
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-05 13:55:39,703[1] ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (:p0, :p1, :p2, :p3)
+Npgsql.NpgsqlException:
+duplicate key violates unique constraint "bancos_pkey"
+Severity: ERROR
+Code: 23505
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 839
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1163
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1181
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1367
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1030
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery() in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 512
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2011-10-05 13:55:39,703[1] ERROR NHibernate.Util.ADOExceptionReporter - ERROR: 23505: duplicate key violates unique constraint "bancos_pkey"
+2011-10-05 13:55:39,703[1] ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session
+NHibernate.Exceptions.GenericADOException: could not insert: [Site.Modelo.Banco#2][SQL: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (?, ?, ?, ?)] ---> Npgsql.NpgsqlException:
+duplicate key violates unique constraint "bancos_pkey"
+Severity: ERROR
+Code: 23505
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 839
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1163
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1181
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1367
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1030
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery() in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 512
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.AdoNet.NonBatchingBatcher.AddToBatch(IExpectation expectation)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2011-10-05 13:55:39,718[1] ERROR Site.Visao.Global - App_Error
+System.Exception: could not insert: [Site.Modelo.Banco#2][SQL: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (?, ?, ?, ?)]
+   at Site.Visao.administradores.CadBanco.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\administradores\CadBanco.aspx.cs:line 64
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-05 13:55:52,078[1] ERROR Site.Visao.Global - App_Error
+System.Web.HttpException: The file '/mc/administradores/ListaBancos.aspx' does not exist.
+   at System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2011-10-05 14:00:21,921[1] ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (:p0, :p1, :p2, :p3)
+Npgsql.NpgsqlException:
+duplicate key violates unique constraint "bancos_pkey"
+Severity: ERROR
+Code: 23505
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 839
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1163
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1181
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1367
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1030
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery() in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 512
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2011-10-05 14:00:22,140[1] ERROR NHibernate.Util.ADOExceptionReporter - ERROR: 23505: duplicate key violates unique constraint "bancos_pkey"
+2011-10-05 14:00:22,156[1] ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session
+NHibernate.Exceptions.GenericADOException: could not insert: [Site.Modelo.Banco#3][SQL: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (?, ?, ?, ?)] ---> Npgsql.NpgsqlException:
+duplicate key violates unique constraint "bancos_pkey"
+Severity: ERROR
+Code: 23505
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 839
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1163
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1181
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1367
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1030
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery() in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 512
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.AdoNet.NonBatchingBatcher.AddToBatch(IExpectation expectation)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2011-10-05 14:00:22,203[1] ERROR Site.Visao.Global - App_Error
+System.Exception: could not insert: [Site.Modelo.Banco#3][SQL: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (?, ?, ?, ?)]
+   at Site.Visao.administradores.CadBanco.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\administradores\CadBanco.aspx.cs:line 64
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-05 14:04:07,875[1] ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (:p0, :p1, :p2, :p3)
+Npgsql.NpgsqlException:
+duplicate key violates unique constraint "bancos_pkey"
+Severity: ERROR
+Code: 23505
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 839
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1163
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1181
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1367
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1030
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery() in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 512
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2011-10-05 14:04:07,890[1] ERROR NHibernate.Util.ADOExceptionReporter - ERROR: 23505: duplicate key violates unique constraint "bancos_pkey"
+2011-10-05 14:04:07,890[1] ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session
+NHibernate.Exceptions.GenericADOException: could not insert: [Site.Modelo.Banco#6][SQL: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (?, ?, ?, ?)] ---> Npgsql.NpgsqlException:
+duplicate key violates unique constraint "bancos_pkey"
+Severity: ERROR
+Code: 23505
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 839
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1163
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1181
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1367
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1030
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery() in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 512
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.AdoNet.NonBatchingBatcher.AddToBatch(IExpectation expectation)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2011-10-05 14:04:07,906[1] ERROR Site.Visao.Global - App_Error
+System.Exception: could not insert: [Site.Modelo.Banco#6][SQL: INSERT INTO bancos (ban_nome, ban_site, ban_logo, ban_cod) VALUES (?, ?, ?, ?)]
+   at Site.Visao.administradores.CadBanco.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\administradores\CadBanco.aspx.cs:line 64
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-05 14:11:33,171[1] ERROR Site.Visao.Global - App_Error
+System.Exception: No row with the given identifier exists[Site.Modelo.Usuario#7]
+   at Site.Visao.administradores.ListaBanco.GridView1_RowDeleting(Object sender, GridViewDeleteEventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\administradores\ListaBanco.aspx.cs:line 52
+   at System.Web.UI.WebControls.GridView.OnRowDeleting(GridViewDeleteEventArgs e)
+   at System.Web.UI.WebControls.GridView.HandleDelete(GridViewRow row, Int32 rowIndex)
+   at System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)
+   at System.Web.UI.WebControls.GridView.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.GridView.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 20:47:53,359[1] ERROR Site.Visao.Global - App_Error
+System.Exception: Object reference not set to an instance of an object.
+   at Site.Visao.usuarios.CadCliente.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadCliente.aspx.cs:line 175
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 20:48:15,984[1] ERROR Site.Visao.Global - App_Error
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Site.Controle.cntrCliente.SelecionaClienteCpf(String pCPF) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Controle\cntrCliente.cs:line 283
+   at Site.Visao.usuarios.CadProposta.BuscaCliente(String cpf) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadProposta.aspx.cs:line 696
+   at Site.Visao.usuarios.CadProposta.ButtonBusca_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadProposta.aspx.cs:line 607
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 20:49:13,578[1] ERROR Site.Visao.Global - App_Error
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Site.Controle.cntrCliente.SelecionaClienteCpf(String pCPF) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Controle\cntrCliente.cs:line 283
+   at Site.Visao.usuarios.CadProposta.BuscaCliente(String cpf) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadProposta.aspx.cs:line 696
+   at Site.Visao.usuarios.CadProposta.ButtonBusca_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadProposta.aspx.cs:line 607
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 20:51:04,156[10] ERROR Site.Visao.Global - App_Error
+System.Exception: An item with the same key has already been added.
+   at Site.Visao.usuarios.ListaClientes.CarregaGrid() in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\ListaClientes.aspx.cs:line 58
+   at Site.Visao.usuarios.ListaClientes.Page_Load(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\ListaClientes.aspx.cs:line 23
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 20:51:28,640[10] ERROR Site.Visao.Global - App_Error
+System.Exception: Object reference not set to an instance of an object.
+   at Site.Visao.usuarios.CadCliente.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadCliente.aspx.cs:line 175
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 20:54:09,171[10] ERROR Site.Visao.Global - App_Error
+System.Exception: Object reference not set to an instance of an object.
+   at Site.Visao.usuarios.CadCliente.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadCliente.aspx.cs:line 173
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 20:56:25,531[10] ERROR Site.Visao.Global - App_Error
+System.Exception: Object reference not set to an instance of an object.
+   at Site.Visao.usuarios.CadCliente.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadCliente.aspx.cs:line 173
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 20:57:15,765[10] ERROR Site.Visao.Global - App_Error
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Site.Controle.cntrCliente.SelecionaClienteCpf(String pCPF) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Controle\cntrCliente.cs:line 283
+   at Site.Visao.usuarios.CadProposta.BuscaCliente(String cpf) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadProposta.aspx.cs:line 696
+   at Site.Visao.usuarios.CadProposta.ButtonBusca_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadProposta.aspx.cs:line 607
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 21:00:14,937[10] ERROR Site.Visao.Global - App_Error
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Site.Controle.cntrCliente.SelecionaClienteCpf(String pCPF) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Controle\cntrCliente.cs:line 283
+   at Site.Visao.usuarios.CadProposta.BuscaCliente(String cpf) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadProposta.aspx.cs:line 696
+   at Site.Visao.usuarios.CadProposta.ButtonBusca_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadProposta.aspx.cs:line 607
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 21:00:30,187[10] ERROR Site.Visao.Global - App_Error
+System.Exception: Object reference not set to an instance of an object.
+   at Site.Visao.usuarios.CadCliente.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadCliente.aspx.cs:line 175
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 21:16:47,562[1] ERROR Site.Visao.Global - App_Error
+System.Exception: Object reference not set to an instance of an object.
+   at Site.Visao.usuarios.CadCliente.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadCliente.aspx.cs:line 175
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2011-10-10 21:25:41,937[1] ERROR Site.Visao.Global - App_Error
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Site.Controle.cntrCliente.SelecionaClienteCpf(String pCPF) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Controle\cntrCliente.cs:line 283
+   at Site.Visao.usuarios.CadCliente.ButtonSalvar_Click(Object sender, EventArgs e) in G:\ARQUIVOS\SITES\Projeto-MACICOCRED\SiteMacicoCred\Site.Visao\usuarios\CadCliente.aspx.cs:line 136
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)

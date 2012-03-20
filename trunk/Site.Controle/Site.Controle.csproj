@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B5A1D39-7DDB-4D42-81F9-D21C62C50B49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Site.Controle</RootNamespace>
+    <AssemblyName>Site.Controle</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>C:\Meus documentos\Visual Studio 2010\DEPENDENCIAS\NHibernate-2.1.2.GA-bin\Required_For_LazyLoading\Castle\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cntrBanco.cs" />
+    <Compile Include="cntrCliente.cs" />
+    <Compile Include="cntrComissao.cs" />
+    <Compile Include="cntrContrato.cs" />
+    <Compile Include="cntrLink.cs" />
+    <Compile Include="cntrLoja.cs" />
+    <Compile Include="cntrPagina.cs" />
+    <Compile Include="cntrProposta.cs" />
+    <Compile Include="cntrUsuario.cs" />
+    <Compile Include="cntrWebsite.cs" />
+    <Compile Include="DS_Site.cs">
+      <DependentUpon>DS_Site.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DS_Site.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Site.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DS_Site.xsc">
+      <DependentUpon>DS_Site.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Site.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Site.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Site.xss">
+      <DependentUpon>DS_Site.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Site.Modelo\Site.Modelo.csproj">
+      <Project>{BA3D0736-3E34-47A3-A9B5-5109F144FE32}</Project>
+      <Name>Site.Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Site.Util\Site.Util.csproj">
+      <Project>{4841C5C6-BF9B-4C4E-A992-CECEDF9F7597}</Project>
+      <Name>Site.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Site.Modelo" namespace="Site.Modelo">
+  <class name="Site.Modelo.Contrato" table="contratos" lazy="false">
+    <id name="con_cod" type="String" column="con_cod">
+      <generator class="sequence">
+        <param name="sequence">contratos_con_cod_seq</param>
+      </generator>
+    </id>
+    <property name="con_numero" column="con_numero" type="String" />
+    <property name="con_data_liberacao" column="con_data_liberacao" type="DateTime" />
+    <property name="con_taxa" column="con_taxa" type="Double" />
+    <property name="con_valor" column="con_valor" type="Decimal(8,2)" />
+    <property name="con_tipo" column="con_tipo" type="String" />
+    <many-to-one name="con_proposta" class="Site.Modelo.Proposta" column="con_proposta" not-null="true"/>
+    <many-to-one name="con_comissao" class="Site.Modelo.Comissao" column="con_comissao" not-null="true"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,154 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageAdmin.master.cs" Inherits="Site.Visao.administradores.MasterPageAdmin" %>
+
+<%@ Import Namespace="Site.Util" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+	<meta name="robots" content="noindex, nofollow" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <link href="../App_Themes/Theme1/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../scripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="../scripts/arial.js"></script>
+    <script type="text/javascript" src="../scripts/cuf_run.js"></script>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    <div class="main">
+      <div class="header">
+        <div class="header_resize">
+          <div class="logo">
+          <div class="logo_topo">
+            <h3 class="adm"><span>Área</span> <asp:Label ID="Label1" runat="server" Text="Administrativa" ForeColor="White"></asp:Label>
+            <small><asp:Label ID="LabelSaldacao" runat="server"></asp:Label></small></h3>
+          </div>
+          </div>
+          <div class="menu_nav">
+            <ul>
+              <li class="active"><a href="Default.aspx">Inicial</a></li>
+                <asp:LoginView ID="LoginView1" runat="server">
+                <RoleGroups>
+                <asp:RoleGroup Roles="Administrador">
+                    <ContentTemplate>
+                    <li><a href="../administradores/ListaPaginas.aspx">Páginas</a></li>
+                    <li><a href="../administradores/ListaLinks.aspx">Links</a></li>
+                    <li><a href="../administradores/ListaLojas.aspx">Lojas</a></li>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+                </RoleGroups>
+                </asp:LoginView>
+                <asp:LoginView ID="LoginView2" runat="server">
+                <RoleGroups>
+                <asp:RoleGroup Roles="Administrador,Operador,Corretor">
+                    <ContentTemplate>
+                    <li><a href="../usuarios/CadCliente.aspx">Cliente</a></li>
+                    <li><a href="../usuarios/CadProposta.aspx">Proposta</a></li>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+                </RoleGroups>
+                </asp:LoginView>
+                <asp:LoginView ID="LoginView3" runat="server">
+                <RoleGroups>
+                <asp:RoleGroup Roles="Corretor">
+                    <ContentTemplate>
+                    <li><a href="../usuarios/Relatorios.aspx">Relatório</a></li>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+              </RoleGroups>
+              </asp:LoginView>
+              <li><asp:LoginStatus ID="LoginStatus1" runat="server" LogoutText="Sair" /></li>
+            </ul>
+          </div>
+          <div class="clr"></div>
+        </div>
+      </div>
+     <div class="hbg_adm"><asp:LoginName ID="LoginName1" FormatString="Seja bem-vindo! <strong>{0}</strong>" runat="server" />&nbsp;&nbsp;</div>
+      <div class="content">
+        <div class="content_resize">
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+   
+        </asp:ContentPlaceHolder>
+      
+          <div class="sidebarAdmin">
+            <div class="gadget">
+              <h2 class="star"><span>Portal</span></h2>
+              <div class="clr"></div>
+              <ul class="sb_menu">
+                <li><a href="../Default.aspx">Ir para o Site</a></li>
+                <asp:LoginView ID="LoginView4" runat="server">
+                <RoleGroups>
+                <asp:RoleGroup Roles="Administrador">
+                    <ContentTemplate>
+                    <li><a href="../administradores/CadSite.aspx">Website</a></li>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+                </RoleGroups>
+                </asp:LoginView>
+              </ul>
+            </div>
+            <div class="gadget">
+              <h2 class="star"><span>Opções</span></h2>
+              <div class="clr"></div>
+              <ul class="ex_menu">
+                <asp:LoginView ID="LoginView5" runat="server">
+                <RoleGroups>
+                <asp:RoleGroup Roles="Administrador,Operador,Corretor">
+                    <ContentTemplate>
+                    <li><a href="../usuarios/ListaClientes.aspx">Clientes</a></li>
+                    <li><a href="../usuarios/ListaPropostas.aspx">Propostas</a></li>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+                </RoleGroups>
+                </asp:LoginView>
+                <asp:LoginView ID="LoginView6" runat="server">
+                <RoleGroups>
+                <asp:RoleGroup Roles="Administrador">
+                    <ContentTemplate>
+                    <li><a href="../administradores/ListaCorretores.aspx">Corretores</a></li>
+                    <li><a href="../administradores/ListaComissao.aspx">Relatórios</a></li>
+                    <li><a href="../administradores/ListaUsuarios.aspx">Usuários</a></li>
+                    <li><a href="../administradores/ListaBanco.aspx">Bancos</a></li>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+                </RoleGroups>
+                </asp:LoginView>
+                <asp:LoginView ID="LoginView7" runat="server">
+                <RoleGroups>
+                <asp:RoleGroup Roles="Operador,Corretor">
+                    <ContentTemplate>
+                    <li><a href="../administradores/CadUsuario.aspx">Meu Cadastro</a></li>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+                </RoleGroups>
+                </asp:LoginView>
+              </ul>
+            </div>
+          </div>
+          <div class="clr"></div>
+        </div>
+      </div>
+      <div class="fbg">
+        <div class="fbg_resize">
+            Logado como <strong><asp:Label ID="LabelRole" runat="server" Text=""></asp:Label></strong>
+          <div class="clr"></div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer_resize">
+          <p class="lf">Copyright © 2010 - <%= DateTime.Now.Year %> <strong><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></strong></p>
+          <p class="rf">Produzido por <a href='<%= ConfigurationManager.AppSettings["AdminSite"] %>' target='_blank'>RWD</a></p>
+          <div class="clr"></div>
+        </div>
+      </div>
+    </div>
+    </form>
+</body>
+</html>
